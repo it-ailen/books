@@ -1,15 +1,22 @@
 原文["GETTING STARTED"](https://www.vagrantup.com/docs/getting-started/)章节
 
-<!-- START doctoc -->
-#开始
-<!-- END doctoc -->
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**content**
+
+- [启动和运行](#%E5%90%AF%E5%8A%A8%E5%92%8C%E8%BF%90%E8%A1%8C)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 本指导章节将带你进入第一个Vagrant工程，向你展示Vagrant为你提供的主要的基本功能。
-如果你想知道Vagrant能带来哪些好处，你需要阅读["为什么是Vagrant?"](./why_vagrant)章节。
-本指导章节将使用VirtualBox作为环境，因为它是免费的，兼容所有主流平台，并且Vagrant内置了对它良好的支持。但你需要记住Vagrant可以在[其它许多虚拟工具](https://www.vagrantup.com/docs/getting-started/providers.html)上使用。
-在你开始第一个Vagrant工程前，请[安装最新版本的Vagrant]()。另外，由于我们要使用[VirtualBox](https://www.virtualbox.org/)，所以你也需要安装它。
 
-##启动和运行
+如果你想知道Vagrant能带来哪些好处，你需要阅读["为什么是Vagrant?"](./why_vagrant)章节。
+
+本指导章节将使用VirtualBox作为环境，因为它是免费的，兼容所有主流平台，并且Vagrant内置了对它良好的支持。但你需要记住Vagrant可以在[其它许多虚拟工具](https://www.vagrantup.com/docs/getting-started/providers.html)上使用。
+
+在你开始第一个Vagrant工程前，请[安装最新版本的Vagrant](https://www.vagrantup.com/docs/installation/)。另外，由于我们要使用[VirtualBox](https://www.virtualbox.org/)，所以你也需要安装它。
+
+## 启动和运行
 
 > $ vagrant init hashicorp/precise64
 

@@ -158,13 +158,15 @@ Namespaces do not guarantee canonical boxes! A common misconception is that a na
 ### 安装APACHE
 
 在我们的基础工程中，我们将只安装[Apache](http://httpd.apache.org/)，使用shell脚本安装。在Vagrantfile所在的目录创建以下shell脚本并把它保存为`bootstrap.sh`:
-> #!/usr/bin/env bash
-> apt-get update 
-> apt-get install -y apache2
-> if ! [ -L /var/www ]; then
->   rm -rf /var/www
->   ln -fs /vagrant /var/www
-> fi
+```shell
+#!/usr/bin/env bash
+apt-get update 
+apt-get install -y apache2
+if ! [ -L /var/www ]; then
+  rm -rf /var/www
+  ln -fs /vagrant /var/www
+fi
+```
 
 Next, we configure Vagrant to run this shell script when setting up our machine. We do this by editing the Vagrantfile, which should now look like this:
 接下来，我们配置Vagrant来在我们启动虚拟机的时候运行此脚本。更改Vagrantfile如下:

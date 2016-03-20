@@ -8,8 +8,11 @@
 
 # Vagrant[官方文档](https://www.vagrantup.com/docs/)中文翻译
 
-欢迎来到Vagrant(用于管理虚拟机生命周期的命令行工具)。本文档旨在提供关于Vagrant的自上而下的、包含尽量多细节的功能细节。如果你刚开始接触Vagrant，非常推荐你先从[《开始使用Vagrant》](./getting_started)开始，之后再回到本页。
+欢迎来到Vagrant(用于管理虚拟机生命周期的命令行工具)。本文档旨在提供关于Vagrant的自上而下的、包含尽量多细节的功能细节。如果你刚开始接触Vagrant，非常推荐你先从[《开始使用Vagrant》](./getting_started.md)开始，之后再回到本页。
 
 * [为什么用Vagrant?](./why-vagrant.md)
+* [安装Vagrant](./installation.md)
+* [开始使用Vagrant](./getting_started.md)
+* [命令行接口](./cli.md)
 
 

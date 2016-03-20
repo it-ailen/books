@@ -4,27 +4,29 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **内容**
 
-- [启动和运行](#%E5%90%AF%E5%8A%A8%E5%92%8C%E8%BF%90%E8%A1%8C)
-- [工程设置](#%E5%B7%A5%E7%A8%8B%E8%AE%BE%E7%BD%AE)
-- [Boxes](#boxes)
+- [开始(原文)](#%E5%BC%80%E5%A7%8B%E5%8E%9F%E6%96%87)
+  - [启动和运行](#%E5%90%AF%E5%8A%A8%E5%92%8C%E8%BF%90%E8%A1%8C)
+- [工程设置(原文)](#%E5%B7%A5%E7%A8%8B%E8%AE%BE%E7%BD%AE%E5%8E%9F%E6%96%87)
+- [Boxes(原文)](#boxes%E5%8E%9F%E6%96%87)
   - [安装box](#%E5%AE%89%E8%A3%85box)
   - [使用box](#%E4%BD%BF%E7%94%A8box)
   - [查找更多box](#%E6%9F%A5%E6%89%BE%E6%9B%B4%E5%A4%9Abox)
-- [打开和连接](#%E6%89%93%E5%BC%80%E5%92%8C%E8%BF%9E%E6%8E%A5)
-- [同步文件夹](#%E5%90%8C%E6%AD%A5%E6%96%87%E4%BB%B6%E5%A4%B9)
-- [供应](#%E4%BE%9B%E5%BA%94)
+- [打开和连接(原文)](#%E6%89%93%E5%BC%80%E5%92%8C%E8%BF%9E%E6%8E%A5%E5%8E%9F%E6%96%87)
+- [同步文件夹(原文)](#%E5%90%8C%E6%AD%A5%E6%96%87%E4%BB%B6%E5%A4%B9%E5%8E%9F%E6%96%87)
+- [供应(原文)](#%E4%BE%9B%E5%BA%94%E5%8E%9F%E6%96%87)
   - [安装APACHE](#%E5%AE%89%E8%A3%85apache)
   - [PROVISION](#provision)
-- [网络](#%E7%BD%91%E7%BB%9C)
+- [网络(原文)](#%E7%BD%91%E7%BB%9C%E5%8E%9F%E6%96%87)
   - [端口转发](#%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91)
   - [其它网络](#%E5%85%B6%E5%AE%83%E7%BD%91%E7%BB%9C)
-- [共享](#%E5%85%B1%E4%BA%AB)
+- [共享(原文)](#%E5%85%B1%E4%BA%AB%E5%8E%9F%E6%96%87)
   - [登陆到HASHICORP'S ATLAS站点](#%E7%99%BB%E9%99%86%E5%88%B0hashicorps-atlas%E7%AB%99%E7%82%B9)
-  - [共享](#%E5%85%B1%E4%BA%AB-1)
+  - [共享](#%E5%85%B1%E4%BA%AB)
 - [销毁](#%E9%94%80%E6%AF%81)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
+## 开始[(原文)](https://www.vagrantup.com/docs/getting-started/)
 本指导章节将带你进入第一个Vagrant工程，向你展示Vagrant为你提供的主要的基本功能。
 
 如果你想知道Vagrant能带来哪些好处，你需要阅读["为什么是Vagrant?"](./why_vagrant)章节。
@@ -33,7 +35,7 @@
 
 在你开始第一个Vagrant工程前，请[安装最新版本的Vagrant](https://www.vagrantup.com/docs/installation/)。另外，由于我们要使用[VirtualBox](https://www.virtualbox.org/)，所以你也需要安装它。
 
-## 启动和运行
+### 启动和运行
 
 > $ vagrant init hashicorp/precise64
 
@@ -45,7 +47,7 @@
 
 本篇的余下部分将带你开始一个更复杂的工程，并涉及更多的Vagrant功能。
 
-## [工程设置](https://www.vagrantup.com/docs/getting-started/project_setup.html)
+## 工程设置[(原文)](https://www.vagrantup.com/docs/getting-started/project_setup.html)
 设置Vagrant工程的第一步是创建一个[Vagrantfile](../vagrantfile/)。Vagrantfile有两个目的:
 * 标记工程的根目录。Vagrant中的很多配置项都是相对于该根目录的。
 * 描述虚拟机类型，运行工程所需要的资源，所需要的软件以及获取方法。
@@ -62,7 +64,7 @@ Vagrant提供了一个内置的命令来初始化用于Vagrant的目录:`vagrant
 
 如果你用版本控制工具的话，Vagrantfile应该和你的工程一起上传。这样，每个参与此工程的人都能不需要做任何前期工作(配置环境等)就能参与其中。
 
-## [Boxes](https://www.vagrantup.com/docs/getting-started/boxes.html)
+## Boxes[(原文)](https://www.vagrantup.com/docs/getting-started/boxes.html)
 
 **译者注: Boxes算一个术语，所以就不翻译了**
 
@@ -104,7 +106,7 @@ Namespaces do not guarantee canonical boxes! A common misconception is that a na
 
 除了查找免费box外，HashiCorp还允许你管理自己的box列表，如果你打算为自己的私有组织创建box，你也可以拥有私有的box列表。
 
-## [打开和连接](https://www.vagrantup.com/docs/getting-started/up.html)
+## 打开和连接[(原文)](https://www.vagrantup.com/docs/getting-started/up.html)
 是时候启动你的第一个Vagrant环境啦。在终端中运行:
 > vagrant up
 
@@ -121,7 +123,7 @@ Namespaces do not guarantee canonical boxes! A common misconception is that a na
 `vagarnt destroy`命令并不实现删除已下载的box文件。如果你要完全删除box文件，你可以用`vagrant box remove`命令。
 
 
-## [同步文件夹](https://www.vagrantup.com/docs/getting-started/synced_folders.html)
+## 同步文件夹[(原文)](https://www.vagrantup.com/docs/getting-started/synced_folders.html)
 
 虽然如果容易地拥有一个虚拟机是很酷的事，但很多用户都不愿意只是在SSH中用一些终端编辑工具编辑文件。幸运的是，用Vagrant你不需要这样。通过使用同步文件夹，Vagrant会自动地同步宿主机和虚拟机之间的共享文件。
 
@@ -149,7 +151,7 @@ Namespaces do not guarantee canonical boxes! A common misconception is that a na
 
 通过[同步目录]()，你可以继续在你的宿主机在使用编辑器并将这些文件同步到虚拟机中。
 
-## [供应](https://www.vagrantup.com/docs/getting-started/provisioning.html)
+## 供应[(原文)](https://www.vagrantup.com/docs/getting-started/provisioning.html)
 
 现在我们有了一个运行的ubuntu基础版本，并且我们可以在宿主机中编辑并同步到虚拟机中，让我们用一个web服务器将它们暴露出来吧。
 
@@ -190,7 +192,7 @@ Vagrant完全运行起来后，其中的web服务器也会启动并运行。你�
 
 你可以创建更多的文件，并在终端中查看它们。但在下一步中，我们会讲到网络配置选项，那样你就可以用浏览器对客户机进行访问。
 
-## [网络](https://www.vagrantup.com/docs/getting-started/networking.html)
+## 网络[(原文)](https://www.vagrantup.com/docs/getting-started/networking.html)
 
 至此，我们拥有了一个运行的web服务器，并且可以从宿主机中修改文件，而且它们会被自动地同步到客机中。然而，仅仅从终端中访问这些网页文件是不足以满足需求的。在这一步骤中，我们将会使用Vagrant的网络功能来提供额外的选项，使我们可以从宿主机中访问到客机。
 
@@ -214,7 +216,7 @@ Let us setup a forwarded port so we can access Apache in our guest. Doing so is 
 
 Vagrant还提供其它形式的网络，允许你将一个静态IP地址映射到客机，或者将客机桥接到一个已存在的网络上。如果你对其它选项感兴趣，可以阅读[这里](../networking/)。
 
-## [共享](https://www.vagrantup.com/docs/getting-started/share.html)
+## 共享[(原文)](https://www.vagrantup.com/docs/getting-started/share.html)
 
 现在我们已经有了一个功能十分丰富的开发环境。但为了方便地提供开发环境，Vagrant提供了便捷的共享和协作功能--[Vagrant共享](../share/)。
 

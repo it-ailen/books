@@ -182,8 +182,8 @@ if ! [ -L /var/www ]; then
 fi
 ```
 
-Next, we configure Vagrant to run this shell script when setting up our machine. We do this by editing the Vagrantfile, which should now look like this:
 接下来，我们配置Vagrant来在我们启动虚拟机的时候运行此脚本。更改Vagrantfile如下:
+
 > Vagrant.configure("2") do |config|  
 
 >   config.vm.box = "hashicorp/precise64"

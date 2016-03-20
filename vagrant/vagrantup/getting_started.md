@@ -55,7 +55,9 @@
 Vagrant提供了一个内置的命令来初始化用于Vagrant的目录:`vagrant init`。为了完成本向导，请在你的命令行终端中输入下列命令:
 
 > mkdir vagrant_getting_started
+
 > cd vagrant_getting_started
+
 > vagrant init
 
 现在你的当前目录在会生成一个Vagrantfile。你可以查看一下这个文件，里面都是一些注释及样例。如果它看起来令人生畏的话，别担心，我们马上要对它进行修改。
@@ -92,7 +94,9 @@ Namespaces do not guarantee canonical boxes! A common misconception is that a na
 既然box已经被添加到Vagrant中，我们需要配置我们的工程来使用它。打开Vagrantfile并且把修改内容如下:
 
 > Vagrant.configure("2") do |config|
+
 >   config.vm.box = "hashicorp/precise64"
+
 > end
 
 本例中的"hashicorp/precise64"必须和你之前添加的box名称相同。如果之前没有添加box，Vagrant会在运行的时候自动下载并添加该box。
@@ -135,16 +139,24 @@ Namespaces do not guarantee canonical boxes! A common misconception is that a na
 
 再次运行`vagrant up`并SSH到虚拟机中你会看到:
 > $ vagrant up
+
 > ...
+
 > $ vagrant ssh
+
 > ...
+
 > vagrant@precise64:~$ ls /vagrant
+
 > Vagrantfile
 
 无论你是否相信，你在虚拟机中看到的这个Vagrantfile确实是你主机中的这个Vagrantfile。你可以修改它来证明。
 > vagrant@precise64:~$ touch /vagrant/foo
+
 > vagrant@precise64:~$ exit
+
 > $ ls
+
 > foo Vagrantfile
 
 哇！(-_-~!)"foo"现在在你的宿主机中了。你可以看到，Vagrant保持同步目录同步。
@@ -173,8 +185,11 @@ fi
 Next, we configure Vagrant to run this shell script when setting up our machine. We do this by editing the Vagrantfile, which should now look like this:
 接下来，我们配置Vagrant来在我们启动虚拟机的时候运行此脚本。更改Vagrantfile如下:
 > Vagrant.configure("2") do |config|  
+
 >   config.vm.box = "hashicorp/precise64"
+
 >   config.vm.provision :shell, path: "bootstrap.sh"
+
 > end
 
 其中新增的"provision"行告诉Vagrant使用shell来设置虚拟机，用`bootstrap.sh`文件。文件路径为相对于工程根目录的相对路径。
@@ -185,7 +200,9 @@ Next, we configure Vagrant to run this shell script when setting up our machine.
 
 Vagrant完全运行起来后，其中的web服务器也会启动并运行。你还不能从你的浏览器中看到这个网页，但你可以通过从SSH方式下载虚拟机中的一个文件来确认provision正常运行:
 > $ vagrant ssh
+
 > ...
+
 > vagrant@precise64:~$ wget -qO- 127.0.0.1
 
 上面这一步骤正常运行了，是因为在上面shell脚本中，我们安装了Apache并将Apache的默认`文件目录`指向了`/vagrant`目录。
@@ -203,9 +220,13 @@ Vagrant完全运行起来后，其中的web服务器也会启动并运行。你�
 Let us setup a forwarded port so we can access Apache in our guest. Doing so is a simple edit to the Vagrantfile, which now looks like this:
 现在我们来设置转发端口，这样我们就可以访问到客机上的Apache了。我们只需修改一下Vagrantfile即可:
 > Vagrant.configure("2") do |config|
+
 >   config.vm.box = "hashicorp/precise64"
+
 >   config.vm.provision :shell, path: "bootstrap.sh"
+
 >   config.vm.network :forwarded_port, guest: 80, host: 4567
+
 > end
 
 运行`vagrant reload`或者`vagrant up`(要看当前客机是否在运行)来使修改生效。
@@ -227,18 +248,26 @@ Vagrant还提供其它形式的网络，允许你将一个静态IP地址映射�
 在开始分享你的Vagrant环境前，你需要在[HashiCorp's Atlas](https://www.vagrantup.com/docs/other/atlas.html)中注册一个账号。别担心，它是免费的。
 
 注册后，你可以用`vagrant login`命令登陆:
+
 > $ vagrant login
+
 > Username or Email: mitchellh
+
 > Password (will be hidden):
+
 > You are now logged in!
 
 ### 共享
 
 登陆后，运行`vagrant share`:
 > $ vagrant share
+
 > ...
+
 > ==> default: Your Vagrant Share is running!
+
 > ==> default: URL: http://frosty-weasel-0857.vagrantshare.com
+
 > ...
 
 不要试上面的URL，你的会不一样。从`vagrant share`的输出中拷贝出URL并在web浏览器上访问。它将会载入我们先前设置的Apache页面。
